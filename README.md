@@ -1,1 +1,0 @@
-# ciberseguran-a-cybersecurity

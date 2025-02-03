@@ -8,7 +8,7 @@ O objetivo é garantir que as informações permaneçam seguras e protegidas con
 <br>  
 ______________________________________________________________________________________________________________________________________________
 ## OS TRÊS PILARES FUNDAMENTAIS PARA CONSEGUIR APLICAR A CIBERSEGURANÇA NO DIA A DIA:    
-São conhecidos como CID ou 3 "C's.   
+São conhecidos como CID.   
 **C**= Confidencialidade, pois temos que garantir que a informação seja acessada apenas por pessoas ou sistemas autorizados.  
 **I**= Integridade, devemos assegurar que os dados não sejam alterados de forma não autorizada, seja por erro ou ataque.   
 **D**= Disponibilidade, aqui, garantimos que os dados e sistemas estejam acessíveis e funcionando quando necessário, não importa a situação.   

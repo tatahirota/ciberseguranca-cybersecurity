@@ -13,8 +13,34 @@ São conhecidos como CID.
 **I**= Integridade, devemos assegurar que os dados não sejam alterados de forma não autorizada, seja por erro ou ataque.   
 **D**= Disponibilidade, aqui, garantimos que os dados e sistemas estejam acessíveis e funcionando quando necessário, não importa a situação.   
 <br>   
-_______________________________________________________________________________________________________________________________________________
-## CONFIDENCIALIDADE NA PRÁTICA:
+_____________________________________________________________________________________________________________________________   
+   
+## CONFIDENCIALIDADE NA PRÁTICA:   
+
+**1- IDENTIFICAR OS DADOS SENSÍVEIS;**   
+**2- CLASSIFICAR OS DADOS SENSÍVEIS;**   
+**3- IMPLEMENTAR CONTROLES DE ACESSO;**   
+**4- CRIPTOGRAFAR DADOS;**   
+**5- PROTEGER DADOS EM USO;**  
+**6- MONITORAR E AUDITAR;**   
+**7- TREINAR FUNCIONÁRIOS;**  
+**8- IMPLEMENTAR POLÍTICAS DE SEGURANÇA;**   
+**9- PROTEGER DISPOSITIVOS DE REDE;**   
+**10- TESTAR E MELHORAR;**   
+
+**1- IDENTIFICAR DADOS SENSÍVEIS:** são dados pessoais (nome, endereço, CPF, e-mail, etc), dados financeiros (número de cartáo de crédito, transações bancárias,etc), dados de login (senha, token de autenticação, etc), histórico de compras (produtos adquiridos, preferências de consumo, etc), histórico médico, etc.   
+   Para realizar um mapeamento de todos os dados que precisam de proteção, deve-se fazer isso de forma eficiente, e pode utilizar as ferramentas de **Data Center** ou **Data Classification**, pois ajudam a localizar e classificar os dados sensíveis em sistemas, rede e armazenamentos. Uma ferramenta gratuita para Windows e Debian é o **Apache Tika** (arquivos locais), com plugins de segurança, ou alternativamente, o **OpenDLP** (para banco de dados), **SpiderFoot**, **Veracript**, entre outras ferramentas.   
+   TÓPICO DETALHADO SOBRE DATA DISCOVERY E DATA CLASSIFICATION: [EM CONSTRUÇÃO]   
+   TÓPICO DETALHADO SOBRE APACHE TIKA: [ EM CONSTRUÇÃO]   
+   TÓPICO SOBRE OPENDLP: [EM CONSTRUÇÃO]   
+   TÓPICO SOBRE SIPERFOOT: [EM CONSTRUÇÃO]   
+   TÓPICO SOBRE VERACRIPT: [EM CONSTRUÇÃO]   
+
+
+   **2- CLASSIFICAR OS DADOS:** classificar de acordo com o nível de sensibilidade, público (nome de produto, avaliação de cliente), interno (histórico de compras), confidencial (CPF, endereço de e-mail), altamente confidencial (número de cartáo de crédito, senha). Nessa fase, o objetivo é implementar ferramentas e processos para aplicar a classificação definida anteriormente utilizando ferramentas que ajudam a identificar, rotular e proteger os dados com base em sua sensibilidade.
+
+
+   
 
 **CRIPTOGRAFIA DE DADOS**: utilização de criptografia para proteger informações sensíveis (senhas ou dados financeiros, podendo ser em trânsito, e-mails ou rede, ou em repouso, armazenados em disco).   
    

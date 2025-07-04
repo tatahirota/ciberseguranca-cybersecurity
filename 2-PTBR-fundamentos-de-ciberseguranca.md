@@ -28,8 +28,10 @@ ________________________________________________________________________________
 **9- PROTEGER DISPOSITIVOS DE REDE;**   
 **10- TESTAR E MELHORAR;**   
 
-**1- IDENTIFICAR DADOS SENSÍVEIS:** são dados pessoais (nome, endereço, CPF, e-mail, etc), dados financeiros (número de cartáo de crédito, transações bancárias,etc), dados de login (senha, token de autenticação, etc), histórico de compras (produtos adquiridos, preferências de consumo, etc), histórico médico, etc.   
-   Para realizar um mapeamento de todos os dados que precisam de proteção, deve-se fazer isso de forma eficiente, e pode utilizar as ferramentas de **Data Center** ou **Data Classification**, pois ajudam a localizar e classificar os dados sensíveis em sistemas, rede e armazenamentos. Uma ferramenta gratuita para Windows e Debian é o **Apache Tika** (arquivos locais), com plugins de segurança, ou alternativamente, o **OpenDLP** (para banco de dados), **SpiderFoot**, **Veracript**, entre outras ferramentas.   
+<p align="justify"> 
+<strong>1- IDENTIFICAR DADOS SENSÍVEIS:</strong> são dados pessoais (nome, endereço, CPF, e-mail, etc), dados financeiros (número de cartáo de crédito, transações bancárias,etc), dados de login (senha, token de autenticação, etc), histórico de compras (produtos adquiridos, preferências de consumo, etc), histórico médico, etc.   
+   Para realizar um mapeamento de todos os dados que precisam de proteção, deve-se fazer isso de forma eficiente, e pode utilizar as ferramentas de **Data Center** ou **Data Classification**, pois ajudam a localizar e classificar os dados sensíveis em sistemas, rede e armazenamentos. Uma ferramenta gratuita para Windows e Debian é o **Apache Tika** (arquivos locais), com plugins de segurança, ou alternativamente, o **OpenDLP** (para banco de dados), **SpiderFoot**, **Veracript**, entre outras ferramentas. </p>   
+      
    TÓPICO DETALHADO SOBRE DATA DISCOVERY E DATA CLASSIFICATION: [EM CONSTRUÇÃO]   
    TÓPICO DETALHADO SOBRE APACHE TIKA: [ EM CONSTRUÇÃO]   
    TÓPICO SOBRE OPENDLP: [EM CONSTRUÇÃO]   

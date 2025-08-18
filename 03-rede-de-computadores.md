@@ -31,9 +31,27 @@ Rede de computadores é o conjunto de dois ou mais computadores e dispositivos i
  **- WLAN:** rede local sem fio, o Wi-Fi.   
 
 ---   
+   
+### **4- TOPOLOGIA DE REDE FÍSICA**   
+**- ESTRELA:** todos os dispositivos se conectam a um ponto central, como por exemplo, em um switch. Esse é o modelo mais utilizado.    
+   
+<img width="638" height="655" alt="image" src="https://github.com/user-attachments/assets/c2d4eae3-db90-4574-88b9-f6474cf40441" />   
 
-### **4- COMO FUNCIONA**   
+       
+**- ANEL:** os PC's ficam ligados em um ciclo fechado. Os dados circulam de um pra outro até chegarem ao destino. Um único PC fica com acesso diretamente ao modem, enquanto o PC 2, por exemplo, tem que passar pelo PC 1 pra ter acesso ä Internet, e assim sucessivamente. Para ficar sem dúvidas: O PC 1 recebe o acesso a Internet via modem/roteador. Quando o PC 2 quer acessar a Internet, ele envia os dados para o PC 1 (que é o que está próximo do anel, no caso, ele está diretamente conectado ao modem/roteador) e então, o PC 1 repassa o tráfego para o modem e devolve o resultado pelo anel. Se fosse o PC 3, ele passaria pelo PC 2, depois pelo PC 1 e faria todo o processo. O problema é que se o PC 1 cair, toda a rede fica sem internet. E é justamente por isso que não se usa mais essa topologia.   
 
+<img width="593" height="653" alt="image" src="https://github.com/user-attachments/assets/4efa7912-ad58-4c55-bd66-3430700081a7" />   
+
+No desenho acima, o PC 4, ele se conecta diretamente com o PC 1, então, ele pode enviar os dados pro 3, 2 e 1 ou diretamente para o PC 1.   
+
+Existem outras topologias físicas, mas essas são as mais utilizadas. No caso, a estrela permanece no topo de utilização.   
+
+---   
+
+### **5- TOPOLOGIA DE REDE LÓGICA:**   
+
+
+### **6- COMO FUNCIONA**   
 Basicamente é assim que funciona:   
 
 1- Você contrata uma operadora de internet, seja ela, Claro, Vivo, Loga Internet, etc.   
@@ -44,25 +62,6 @@ Basicamente é assim que funciona:
 
 <img width="444" height="429" alt="image" src="https://github.com/user-attachments/assets/f7c254ea-7392-4176-bcce-d58560a20faf" />
 
----   
-
-
-
-
-### **5- TOPOLOGIA DE REDE**   
-**- ESTRELA:** todos os dispositivos se conectam a um ponto central, como por exemplo, em um switch. Esse é o modelo mais utilizado.    
-   
-<img width="638" height="655" alt="image" src="https://github.com/user-attachments/assets/c2d4eae3-db90-4574-88b9-f6474cf40441" />   
-
-       
-**- ANEL:** os PC's ficam ligados em um ciclo fechado. Os dados circulam de um pra outro até chegarem ao destino. Um único PC fica com acesso diretamente ao modem, enquanto o PC 2, por exemplo, tem que passar pelo PC 1 pra ter acesso ä Internet, e assim sucessivamente. Para ficar sem dúvidas: O PC 1 recebe o acesso a Internet via modem/roteador. Quando o PC 2 quer acessar a Internet, ele envia os dados para o PC 1 (que é o que está próximo do anel, no caso, ele está diretamente conectado ao modem/roteador) e então, o PC 1 repassa o tráfego para o modem e devolve o resultado pelo anel. Se fosse o PC 3, ele passaria pelo PC 2, depois pelo PC 1 e faria todo o processo. O problema é que se o PC 1 cair, toda a rede fica sem internet. E é justamente por isso que não se usa mais essa topologia.   
-
-<img width="593" height="653" alt="image" src="https://github.com/user-attachments/assets/4efa7912-ad58-4c55-bd66-3430700081a7" />   
-
-No caso do desenho acima, o PC 4, ele se conecta diretamente com o PC 1, então, ele pode enviar os dados pro 3, 2 e 1 ou diretamente para o PC 1.   
-
-
-**- BARRAMENTO:** 
 
  
 

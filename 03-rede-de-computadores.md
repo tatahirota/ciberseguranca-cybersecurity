@@ -49,6 +49,25 @@ Existem outras topologias físicas, mas essas são as mais utilizadas. No caso, 
 ---   
 
 ### **5- TOPOLOGIA DE REDE LÓGICA:**   
+É a forma como os dados circulam dentro da rede, ou seja, como os computadores/dispositivos se comunicam. E isso inclui o caminho que a informação percorre e quais regras ou protocolos são usados.   
+Não depende de como os cabos estão fisicamente ligados porque isso é topologia física.   
+A topologia lógica se preocupa com o fluxo de informação e como o tráfego é controlado.   
+Ex: imagine que você tem uma rede em topologia física estrela, onde todos estão ligado s a um switch. Fisicamente está na topologia física em estrela, mas logicamente, pode funcionar como um **broadcast** (em que todos recebem os dados, mas só o destino usa) ou até como **anel lógico** (se estiver configurada com protocolo tipo Token Ring).   
+**5.1- Tipos de topologia lógica mais comuns:**   
+**- Broadcast (Ethernet):** um PC envia os dados para todos, mas só o destinatário certo aceita. Essa é a lógica usada na maioria das redes LAN modernas.   
+<img width="555" height="433" alt="image" src="https://github.com/user-attachments/assets/2dc095ce-62bb-4e49-8cd3-6af46e9a4b77" />   
+
+Na imagem acima, o PC 1 pede informação para o servidor, que ao enviar a resposta, envia em modo broadcast (isso envia para todos os computadores), mas apenas o computador que pediu essa informação vai utilizar o dado. Os outros computadores irão descartar automaticamente essa informação.   
+   
+
+
+**- Anel lógico (Token Ring, FDDI):** onde um "token"circula de PC em PC, e só quem tem o token pode transmitir. Isso evita colisões de dados.   
+**- Ponto a ponto (Peer-to-peer):** é uma conexão direta entre dois dispositivos.   
+**- Multiponto:** vários dispositivos compartilham o mesmo meio de comunicação (exemplo: barramento).   
+
+
+
+
 
 
 ### **6- COMO FUNCIONA**   

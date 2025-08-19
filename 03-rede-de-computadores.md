@@ -61,9 +61,14 @@ Na imagem acima, o PC 1 pede informação para o servidor, que ao enviar a respo
    
 
 
-**- Anel lógico (Token Ring, FDDI):** onde um "token"circula de PC em PC, e só quem tem o token pode transmitir. Isso evita colisões de dados.   
-**- Ponto a ponto (Peer-to-peer):** é uma conexão direta entre dois dispositivos.   
-**- Multiponto:** vários dispositivos compartilham o mesmo meio de comunicação (exemplo: barramento).   
+**- Anel lógico (Token Ring, FDDI):** onde um "token"circula de PC em PC, e só quem tem o token pode transmitir. Isso evita colisões de dados.    
+Para essa topologia funcionar, cada computador que for ter esse compartilhamento de dados, precisa ter a placa de rede Token Ring (NIC própria) para poder participar do  anel lógico, e essa placa é incompatível com a Ethernet comum. Também deverá ter um cabo apropriado, geralmente é o cabo STP ou o UTP, e uma conexão MAU (multistation acess unit).   
+Essa topologia caiu em desuso por conta de Ethernet, que é mais barata, atinge velocidades maiores e é mais fácil de gerenciar.
+**- Ponto a ponto (Peer-to-peer):** é uma conexão direta entre dois dispositivos.    
+Pode ser usado via cabo crossover Ethernet para ligar dois PCs diretamente ou por conexão Bluetooth.   
+Porém ela só funciona bem entre dois dispositivos e não possui escalabilidade. A vantagem é que é simples de configurar, possui baixo custo porque não precisa de dispositivos de rede e é ideal para rede **muito** pequenas.      
+**- Multiponto:** vários dispositivos compartilham o mesmo meio de comunicação (exemplo: barramento, Wi-Fi).   
+Fácil de instalar, porém pode ter colisões de pacotes. Possui menor desempenho em redes grandes e se for feito apenas por meio físico e ele falhar, toda a rede para.   
 
 
 

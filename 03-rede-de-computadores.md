@@ -87,23 +87,41 @@ Basicamente é assim que funciona:
 ### **7- MODELOS DE REFERÊNCIA PARA REDE DE COMPUTADORES**   
 Os modelos servem para padronizar a comunicação entre sistemas, ajudar a entender como os dados trafegam em uam rede e separar responsabilidades em camadas.    
 **São dois tipos de modelos utilizados:** o modelo OSI e o TCP/IP. Irei explicar brevemente os dois modelos.   
-**- Modelo OSI:** é uma estrutura teórica desenvolvida pela ISO, que serve para padronizar e entender como os dados trafegam em uma rede. Esse processo é dividido em 7 camadas, e são elas:   
+**MODELO OSI:** é uma estrutura teórica desenvolvida pela ISO, que serve para padronizar e entender como os dados trafegam em uma rede. Esse processo é dividido em 7 camadas, e são elas:   
 **7.1- Camada Física:** sua função principal é transmitir bits "crus"(0 e 1) pelo  meio físico, ou seja, cabos, rádio, luz, etc.   
 Nessa camada, ocorre a conversão de dados em sinais físicos (elétricos, ópticos, radiofrequência, etc.), também define os meios de transmissões (cabos UTP, fibra óptica, Wi-Fi, Bluetooth) e trabalha com bitrate, voltagem, modulação e frequência.   Exemplos:   
 Meios físicos: RJ-45, Wi-Fi, fibra.   
 Padrões: IEEE 802.11 (Wi-Fi), 802.3 (Ethernet), DSL, USB.   
-**Problemas possíveis:** cabos danificados, conectores frouxos, porta física quebrada, interferência eletromagnética (EMI), mal terminação de cabo, falha de energia, falha em NICs ou switches, má configuração duplex/velocidade, sinal fraco (Wi-Fi). **Ferramentas para diagnóstico:** testador de cabo, multímetro, wireshark (detecta falhas de transmissão, LED na placa de rede (indica conexão física).   
+- **Problemas possíveis:** cabos danificados, conectores frouxos, porta física quebrada, interferência eletromagnética (EMI), mal terminação de cabo, falha de energia, falha em NICs ou switches, má configuração duplex/velocidade, sinal fraco (Wi-Fi).
+   
+- **Ferramentas para diagnóstico:** testador de cabo, multímetro, wireshark (detecta falhas de transmissão, LED na placa de rede (indica conexão física).   
 Quanto a luzes de link nos equipamentos: são leds geralmente encontrados em switches, roteadores, nics (placas de rede) e modem. Como analisar: se a cor estiver verde e fixo, a conexão está boa e ativa, caso esteja verde piscando, o tráfego de dados está fluindo. Se estiver amarelo/vermelho/desligado pode ser problema na conexão ou no cabo. Se o led estiver apagado pode-se ter: cabo danificado, NIC desativada, porta errada, switch desligado, problema na alimentação.   
 O testador de cabos é um dispositivo que verifica continuidade, pares trocados, abertos ou curtos em cabos de rede. Como usar: conecte uma ponta do cabo no transmissor e outra no receptor (remoto), daí ligar o testador e observar os leds (geralmente enumerados de 1 a 8+ G). A sequência correta que irá acender é 1-2-3-4-5-6-7-8, significa que o cabo está OK. Caso a sequência esteja trocada ou pinos não acendendo, os pares estão trocados ou rompidos então temos de refazer a ponta do cabo. E se dois leds acenderem ao mesmo tempo ou todos estiverem piscando irregularmente é porque está em curto. Aqui também devemos refazer o conector dos cabos. Se não funcionar em nenhum dos casos, devemos trocar o cabo inteiro. Se também não funcionar, o problema está na camada 2 do modelo OSI.  
-Multimetro serve para testar a continuidade elétrica dos cabos. Como usar: coloque na funcão continuidade (símbolo de som ou diodo), depois toque as pontas de prova nos dois lados de cada fio. Se apitar, o fio está contínuo, se não apitar, o fio está rompido.    
+Multimetro serve para testar a continuidade elétrica dos cabos. Como usar: coloque na funcão continuidade (símbolo de som ou diodo), a ponta preta vai na tomada "COM"e a vermelha no slot marcado para tensão/resistência/continuidade. Então, para testar, encoste as pontas nos dois lados (extremidades) de um mesmo fio do cabo RJ-45, se apitar, o fio está contínuo, se não apitar, o fio está rompido.    
 OTDR é uma ferramenta usada para fibra óptica e ela mede perdas, falhas, quebras e distância até o problema. Ela envia pulsos de luz pela fibra e mede o tempo de retorno (eco/reflexão) para detectar os conectores defeituosos, emendas ruins e até quebras na fibra. Geralmente é utilizada para verificar a integridade de links de fibra, principalmente em longas distâncias, superiores a 100m.   
 Loopback Plugs é um conector especial que reflete o sinal de volta para o equipamento. Como usar: conecta ele na porta de rede (NIC, switch) e se a luz de link acender ou testes passarem, a porta está funcionando. Se não acender, o problema pode ser na porta.   
 Monitorar estatísticas de interface (erros e colisões): devemos usar comandos ou ferramentas de monitoramento na máquina ou no switch. Em Windows (cmd), utilizamos: netstat -e, em Linux: ipconfig eth0.
-**Como resolver:** substituir cabos/conectores, ajustar configurações de duplex/velocidade, garantir alimentação estável, substituir hardware defeituoso.   
-Para troca do RJ-45, temos:   
+No Windows, o netstat -e vai exibir estatísticas de pacotes enviados, recebidos, erros e colisões. Números altos nos campos de erro indicam problemas físicos.
+No Linux, o ifconfig vai ter uma saida tipo: RX packets:696011 errors:0 dropped:0 overruns:0 frame:0   
+TX packets:524673 errors:0 dropped:0 overruns:0 carrier:13 collisions:0
+- Normalidade: erros, dropped, frame, collisions, devem estar em zero ou próximo. carrier pode aparecer em alguns caso.
+- Anormalidade: erros indica CRC, frames fora de padrão ou incompatibilidade de duplex/velocidade. frame pode ser frames malformados (CRC inválido ou tamanho incoerente), dropped, overruns podem ser pacotes não processados por falta de buffer ou CPU ocupada. collisions pode ser excessivas colisões indicando problema de duplex ou congestão, e valores normais são muito baixos, exemplo, <00,1%/.
+ 
+- No Linux, utilizando o ethool -S <interface>, mostra estatísticas detalhadas como: rx_errors, rx_crc_errors, rx_frame_errors, rx_over_errors, etc. Zeros indicam tudo bem, qualquer valor que não seja zero, aponta para testes de cabos, mudanças de porta, ajustes de duplex/velocidade ou substituição de hardware.
+-  **rx_erros** são pacotes recebidos com erros de checksum sendo sinal de cabo ruim, interferência ou duplex incorreto. frame são pacotes com quadros corruptos e indica problemas físicos ou malterminações.
+  **rx_drp** são pacotes recebidos descartados por buffer cheio, pode ser saturação ou desempenho do sistema, em que há fila de recepção cheia, Kernel/driver não conseguiu lidar com a entrada, problemas físicos (em menor escala) e/ou congestionamento geral. Para resolver"atualizar os drivers, evitar broadcast/multicast em excesso na rede, verificar topologia de rede (muitas máquinas em um único switch pode gerar flooding) e monitorar com as ferramentas iftop, nload, netdata.
+  **rx_ovr** são pacotes perdidos por sobrecarga do kernal com CPU ou interrupções lentas em o sistema não conseguiu processar os pacotes recebidos rápido o suficiente e eles foram descartados por falta de buffer. Isso não é necessariamente um problema físico, mas muitas vezes está relacionado a alta carga de rede, problemas no driver da placa, hardware fraco ou mal dimensionado e/ou buffer de recepção muito pequeno. Para resolver, vamos seguir o passo a passo: atualizar os drivers da placa de rede, verificar o uso de CPU/RAM, reduzir o tráfego ou isolar rede pesadas (VLANS, QoS), se possível, utilizar placa de rede com mais buffer ou offload (tipo a da intel com suporte a TCP offloading), em switches gerenciáveis devemos aumentar o buffer por porta (cuidado que nem todos os switches permmitem isso) e também verificar as interrupções da NIC.
+  **framme** é um problema puramente físico em que o quadro Ethernet foi recebido com tamanho inválido, erro de alinhamento ou erro de CRC e pode ser causado por cabo de rede com defeito, cabo de qualidade ruim ou mal crimpado, conectores soltos ou oxidados, EMI (cabos passando perto de motores, lâmpadas, etc.), má terminação (em fibra ou cabos longos). Para resolver, devemos testar e trocar os cabos de rede, recrimpar os conectores, evitar passar cabo junto com cabos de energia ou motores e verificar o  padrão de crimpagem, se é A ou B.
+  **collisions** são colisões que acontecem quando dois dispositivos tentam transmitir ao mesmo tempo na mesma rede Ethernet e é comum em hubs antigos e principalmente, em duplex se está desajustado e valor muito acima de zero é ruim. Nos switches modernos, só acontece se houver desajuste de duplex como por exemplo, se um lado está Full Duplex e o outro está Half Duplex. Para resolver, temos que verificar as configurações de duplex/velocidade em ambos os lados (computador e switch). O ideal é utilizar auto-negociação em ambos e se precisar definir manualmente, configurar full duplex nos dois lados. obs: as velocidados em ambos também devem coincidir.   
 
-<img width="623" height="415" alt="image" src="https://github.com/user-attachments/assets/e502bee1-b2db-4fb3-aedf-513432fd4c04" />   
-
+   
+- **Como resolver:** substituir cabos/conectores, ajustar configurações de duplex/velocidade, garantir alimentação estável, substituir hardware defeituoso.
+   
+Para troca do RJ-45, temos as duas formas de sequência de padrões mais utilizados:   
+   
+<p align="center">
+<img width="623" height="415" alt="image" src="https://github.com/user-attachments/assets/e502bee1-b2db-4fb3-aedf-513432fd4c04" /></p>    
+   
 
 
 

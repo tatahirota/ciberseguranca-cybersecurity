@@ -144,6 +144,14 @@ Para troca do RJ-45, temos as duas formas de sequência de padrões mais utiliza
 <img width="623" height="415" alt="image" src="https://github.com/user-attachments/assets/e502bee1-b2db-4fb3-aedf-513432fd4c04" /></p>    
    
 
-
+**7.2- Camada 2- Enlace de dados:** fornece comunicação confiável entre dois dispositrivos conectados na mesma rede local, como por exemplo,  dois switches ou um switch e um computador. As principais funções dessa camada são:  encapsular os dados em quadros (frames), controlar o acesso ao meio físico (ex: quem pode enviar dados e quando), detectar correção de erros na transmisssã e endereçamento físico usando endereços MAC. Ela é subdividida em duas camadas, a LLC (controle de fluxo e detecção de erros) e MAC (controle de acesso ao meio e endereçamento MAC).   
+**Problemas mais comuns:**   
+-MAC adresss duplicado: dois dispositivos na rede com o mesmo endereço MAC, podendo causar comportamento imprevisível ou perdas de pacote.   
+-Loops de rede: ocorrem quando existem caminhos redundantes entre switches sem o uso de STP e pode causar broadcast storms, alta latência ou travamento de rede.   
+-Erros de CRC: indicam que os quadros chegaram corrompidos e podem ocorrer por problemas físicos nos cabos, conectores ou portas.   
+-Portas em estado errôneo (flapping): as portas sobem e descem constantemente e indicam problemas físicos  ou de configuração.   
+-Broadcast storms: grande quantidade de tráfego de broadcast e pode sobrecarregar os dispositivos e degradar a rede.   
+**Como identificar:**   
+-Comandos em switches e roteadores: **show mac address-table**, verifica se há muitos MACs em uma única porta (loop ou hub), **show interfaces** que mostra as estatísticas de erro como CRC, colisões e drops. **show spanning-tree**, que verifica o status do STP e se há bloqueios e loops.**debug spanning-tree events** mostra os eventos do STP em tempo real. **show interfaces status** verifica se as portãs estão up/down ou flapping.
 
 

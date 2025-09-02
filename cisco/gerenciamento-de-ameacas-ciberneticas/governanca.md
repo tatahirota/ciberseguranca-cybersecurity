@@ -1,7 +1,7 @@
 # **GOVERNANÇA**   
 **Feito por Thaianna ;)**   
 
-A governança da segurança de TI determina quem está autorizado a tomar decisões sobre os riscos a segurança digital em uma empresa. Ela demonstra a responsabilidade e supervisiona garantir que os riscos sejam adequadamente mitigados e que as estratégias de segurança estejam alinhadas aos objetivos comerciais da empresa  e estejam em conformidade com as regulamentações.   
+Na governança da segurança de TI é determinado quem está autorizado a tomar decisões sobre os riscos a segurança digital em uma empresa. Ela demonstra a responsabilidade e supervisiona garantir que os riscos sejam adequadamente mitigados e que as estratégias de segurança estejam alinhadas aos objetivos comerciais da empresa  e estejam em conformidade com as regulamentações.   
 
 Essa funcão em TI deve ser bem feita, pois terá que definir e implementar os controles que a empresa deverá  ter para mitigar os riscos.   
 
